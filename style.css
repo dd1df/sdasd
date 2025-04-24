@@ -1,0 +1,107 @@
+/* 공통 레이아웃 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fbf7f2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #8c1c13;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+header p {
+  margin: 0.5rem 0 0;
+}
+
+main {
+  max-width: 600px;
+  margin: 2rem auto 4rem; /* 아래에 4rem 여백 확보 */
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* steps, button 스타일은 이전과 동일 */
+.steps {
+  list-style: decimal inside;
+  padding-left: 0;
+}
+.steps li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.btn {
+  display: inline-block;
+  background-color: #8c1c13;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+.btn:hover {
+  background-color: #6a130f;
+}
+
+/* ——— 강아지 섹션 ——— */
+.dog-container {
+  position: relative;      /* 자식 .dog-text 의 기준이 됨 */
+  max-width: 600px;
+  margin: 0 auto 4rem;    /* 자동 가로 중앙, 아래여백 4rem */
+}
+
+.dog-img {
+  display: block;          /* inline 공백 제거 */
+  width: 100%;
+  height: auto;            /* 실제 비율대로 높이 결정 */
+  border-radius: 8px;      /* 원하시면 둥글게 */
+}
+
+.dog-text {
+  position: absolute;      /* 이미지 위에 겹쳐짐 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;              /* 이미지보다 위 */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* footer 고정 */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 모바일 패딩 조정 예시 */
+@media (max-width: 600px) {
+  main {
+    margin: 1.5rem 1rem 4rem;
+  }
+  .dog-text {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
